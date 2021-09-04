@@ -5,22 +5,20 @@ import Recipe from './pages/Recipe';
 import Timer from './pages/Timer';
 import './App.css';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <header>
-            <Link to='/'>Recetas</Link>
-          </header>
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <header>
+          <Link to='/'>Recetas</Link>
+        </header>
 
-          <main>
-            <Route exact path='/' component={Home} />
-            <Route path='/recipe/:recipeId' component={Recipe} />
-            <Route path='/timer' component={Timer} />
-          </main>
-        </div>
-      </BrowserRouter>
-    );
-  }
+        <main>
+          <Route exact path='/' component={Home} />
+          <Route path='/recipe/:recipeId' component={Recipe} />
+          <Route path='/timer' component={Timer} />
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
